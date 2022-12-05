@@ -1,10 +1,18 @@
+import Card from './shared/Card'
+import PropTypes from 'prop-types'
+
 function FeedbackItem({ item }) {
   return (
-    <div className='card'> {/* classNames bring in styling from the stylesheet */}
+    <Card> {/* classNames bring in styling from the stylesheet */}
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
-    </div>
+    </Card>  
   )
+}
+
+FeedbackItem.propTypes = {  //careful about the difference between PropTypes and propTypes
+    item: PropTypes.object.isRequired,
+    
 }
 
 export default FeedbackItem
